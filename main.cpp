@@ -37,11 +37,11 @@ int main()
                         char recipe_name[255];
 
                         cout<<"What recipe would you like to read?"<<endl;
-                        cout<<"Your choices are: ";
+                        cout<<"Your choices are: "<<endl;
 
                         for (int i=0; i < recipes.size(); i++)
                         {
-                                cout<<recipes[i]<<" ";
+                                cout<<recipes[i]<<endl;
                         }
                         cout<<"Your choice must end with '.txt'"<<endl;
 
@@ -72,10 +72,10 @@ int main()
                         ifstream file;
 
                         cout<<"What recipe would you like to create a grocery list for?"<<endl;
-                        cout<<"Your choices are: ";
+                        cout<<"Your choices are: "<<endl;
                         for (int i=0; i < recipes.size(); i++)
                         {
-                                cout<<recipes[i]<" ";
+                                cout<<recipes[i]<<endl;
                         }
                         cout<<"Your choice must end with '.txt'"<<endl;
 
