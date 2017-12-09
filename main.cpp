@@ -9,16 +9,9 @@ using namespace std;
 int main()
 {
         vector <string> recipes;
-        
-        string cookies,muffins,meatloaf,enchiladas,omelet;
-        recipes.push_back(cookies);
-        recipes.push_back(muffins);
-        recipes.push_back(meatloaf);
-        recipes.push_back(enchiladas);
-        recipes.push_back(omelet);
 
         char input;
-        
+
         do
         {
                 cout<<"\n==RECIPE BOOK MANAGER==";
@@ -35,19 +28,18 @@ int main()
                         string line;
                         ifstream FileToScreen;
                         char recipe_name[255];
-                        
-                        cout<<"What recipe would you like to read? (Must end in .txt)"<<endl;
-                        cout<<"Your choices are: ";
-                        
-                        for (int i=0; i<recipes.size();i++)
-                        {
-                                cout<<recipes[i];
-                        }
+
+                        cout<<"What recipe would you like to read?"<<endl;
+                        cout<<"Your choices are: cookies, enchiladas, meatloaf, muffins, and omelet"<<endl;
+                        cout<<"Your choice must end with '.txt'"<<endl;
+
+                        // possible for loop; for (int i=0; i<recipes.size();i++)
+
                         cin>>recipe_name;
 
-                       FileToScreen.open(recipe_name);
+                        FileToScreen.open(recipe_name);
 
-                        if (file.is_open())
+                        if (FileToScreen.is_open())
                         {
                                 while ( getline (FileToScreen,line) )
                                 {
@@ -62,14 +54,17 @@ int main()
 
                 }
 
-                /* else if (input=='C'||input=='c')
+                else if (input=='C'||input=='c')
                 {
                         vector <ingredient> groceryList;
                         char recipe_name[255];
                         string first_word;
                         ifstream file;
 
-                        cout <<"What recipe would you like to create a grocery list for? (Must end in .txt)"<<endl;
+                        cout<<"What recipe would you like to create a grocery list for?"<<endl;
+                        cout<<"Your choices are: cookies, enchiladas, meatloaf, muffins, and omelet"<<endl;
+                        cout<<"You choice must end with '.txt'"<<endl;
+
                         cin>>recipe_name;
 
                         file.open(recipe_name);
@@ -85,24 +80,29 @@ int main()
                                 {
                                         ingredient thing;
                                         double num;
-                                        myfile>>num;
+                                        file>>num;
                                         thing.setAmount(num);
 
                                         string type;
-                                        myfile>>type;
+                                        file>>type;
                                         thing.setMeasurement(type);
 
                                         string item;
-                                        myfile>>item;
+                                        file>>item;
                                         thing.setName(item);
 
                                         groceryList.push_back(thing);
 
-                                }while (file does not read 'Directions') //will need to fix this
+                                } while (line != "Directions"); //not sure how to do this part
+                                
                                 file.close();
-                        } 
-                        else cout<<"unable to open file";
-                }*/
+                        }
+
+                        else 
+                        {
+                                cout<<"unable to open file";
+                        }
+                }
 
                 if (input !='R' && input !='r' && input != 'C' && input != 'c' && input != 'P' && input !='p' && input !='Q' && input != 'q') 
                 {
