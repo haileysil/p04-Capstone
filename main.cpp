@@ -6,18 +6,14 @@
 
 using namespace std;
 
+void createRecipeVector(vector<string>&);
+
+int listSize(vector<Ingredients>);
+
 int main()
 {
         vector <string> recipes;
-
-        string cookies,enchiladas,meatloaf,muffins,omelet;
-
-        recipes.push_back("cookies");
-        recipes.push_back("enchiladas");
-        recipes.push_back("meatloaf");
-        recipes.push_back("muffins");
-        recipes.push_back("omelet");
-
+        createRecipeVector(recipes); 
         char input;
 
         do
@@ -118,7 +114,7 @@ int main()
                 {
                         cout<<"Grocery List:"<<endl;
 
-                        for (int i=0; i<groceryList.size(); i++)
+                        for (int i=0; i< listSize(groceryList); i++)
                         {
                                 cout<<groceryList[i]<<endl;
                         }
@@ -132,4 +128,21 @@ int main()
         } while (input != 'Q' && input != 'q');
 
         return 0;
+}
+
+
+void createRecipeVector(vector<string> &recipes)
+{
+        string cookies,enchiladas,meatloaf,muffins,omelet;
+        recipes.push_back("cookies");
+        recipes.push_back("enchiladas");
+        recipes.push_back("meatloaf");
+        recipes.push_back("muffins");
+        recipes.push_back("omelet");
+
+}
+
+int listSize(vector<Ingredients> list)
+{
+return list.size();
 }
