@@ -10,8 +10,15 @@ int main()
 {
         vector <string> recipes;
 
-        char input;
+        string cookies,enchiladas,meatloaf,muffins,omelet;
 
+        recipes.push_back("cookies");
+        recipes.push_back("enchiladas");
+        recipes.push_back("meatloaf");
+        recipes.push_back("muffins");
+        recipes.push_back("omelet");
+
+        char input;
         do
         {
                 cout<<"\n==RECIPE BOOK MANAGER==";
@@ -30,10 +37,13 @@ int main()
                         char recipe_name[255];
 
                         cout<<"What recipe would you like to read?"<<endl;
-                        cout<<"Your choices are: cookies, enchiladas, meatloaf, muffins, and omelet"<<endl;
-                        cout<<"Your choice must end with '.txt'"<<endl;
+                        cout<<"Your choices are: ";
 
-                        // possible for loop; for (int i=0; i<recipes.size();i++)
+                        for (int i=0; i < recipes.size(); i++)
+                        {
+                                cout<<recipes[i]<<" ";
+                        }
+                        cout<<"Your choice must end with '.txt'"<<endl;
 
                         cin>>recipe_name;
 
@@ -62,8 +72,12 @@ int main()
                         ifstream file;
 
                         cout<<"What recipe would you like to create a grocery list for?"<<endl;
-                        cout<<"Your choices are: cookies, enchiladas, meatloaf, muffins, and omelet"<<endl;
-                        cout<<"You choice must end with '.txt'"<<endl;
+                        cout<<"Your choices are: ";
+                        for (int i=0; i < recipes.size(); i++)
+                        {
+                                cout<<recipes[i]<" ";
+                        }
+                        cout<<"Your choice must end with '.txt'"<<endl;
 
                         cin>>recipe_name;
 
@@ -76,25 +90,25 @@ int main()
                                 cout<<first_word<<endl;
 
                                 //print out each ingredient as a loop
-                                do
-                                {
-                                        ingredient thing;
-                                        double num;
-                                        file>>num;
-                                        thing.setAmount(num);
+                                /* do
+                                   {
+                                   ingredient thing;
+                                   double num;
+                                   file>>num;
+                                   thing.setAmount(num);
 
-                                        string type;
-                                        file>>type;
-                                        thing.setMeasurement(type);
+                                   string type;
+                                   file>>type;
+                                   thing.setMeasurement(type);
 
-                                        string item;
-                                        file>>item;
-                                        thing.setName(item);
+                                   string item;
+                                   file>>item;
+                                   thing.setName(item);
 
-                                        groceryList.push_back(thing);
+                                   groceryList.push_back(thing);
 
-                                } while (line != "Directions"); //not sure how to do this part
-                                
+                                   } while (line != "Directions"); //not sure how to do this part
+                                 */
                                 file.close();
                         }
 
@@ -111,7 +125,7 @@ int main()
 
         } while (input != 'Q' && input != 'q');
 
-                                return 0;
+        return 0;
 }
 
 
