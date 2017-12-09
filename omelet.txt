@@ -1,4 +1,3 @@
-Ingredients
 2 whole eggs
 2 tbsp water
 0.125 tsp salt
@@ -6,7 +5,7 @@ Ingredients
 1 tsp butter
 0.25 cup cheese
 
-Directions
+#Directions
 Beat eggs, water, salt and pepper in a small bowl with a whisk or fork. Heat butter in a nonstick pan. Tilt pan to coat entire bottom of pan. Pour in egg mixture and let set at edges. Gently push cooked portions of egg towards the center with a spatula. Continue cooking, gently tilting pan. When the top surface of the egg mixture is thickened with no visible liquid egg, place cheese on one side of the omelet. Fold the omelet in half with the spatula and serve by sliding the omelet onto a plate. Serve immediately.  
 
 Enjoy!
