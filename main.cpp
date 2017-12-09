@@ -66,7 +66,7 @@ int main()
 
                 else if (input=='C'||input=='c')
                 {
-                        vector <ingredient> groceryList;
+                        vector <ingredient> groceryList; //how to make this a member variable?
                         char recipe_name[255];
                         string first_word;
                         ifstream file;
@@ -85,11 +85,11 @@ int main()
 
                         if (file.is_open())
                         {
-                                //print out first word (Ingredients)
+                                //prints out "Ingredients"
                                 getline(file,first_word);
                                 cout<<first_word<<endl;
 
-                                //print out each ingredient as a loop
+                                //should create a vector of ingredients listed in .txt file
                                 do
                                    {
                                    ingredient thing;
