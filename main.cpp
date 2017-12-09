@@ -93,6 +93,7 @@ int main()
                                 /* do
                                    {
                                    ingredient thing;
+
                                    double num;
                                    file>>num;
                                    thing.setAmount(num);
@@ -107,7 +108,7 @@ int main()
 
                                    groceryList.push_back(thing);
 
-                                   } while (line != "Directions"); //not sure how to do this part
+                                   } while (line != "Directions"); // similar to getline?
                                  */
                                 file.close();
                         }
@@ -118,6 +119,17 @@ int main()
                         }
                 }
 
+                /*
+                   else if(input=='P'||input=='p')
+                   {
+                    cout<<"Grocery List:"<<endl;
+
+                    for (int i=0; i<groceryList.size(); i++)
+                            {
+                            cout<<groceryList[i]<<endl;
+                            }
+                   }
+                 */
                 if (input !='R' && input !='r' && input != 'C' && input != 'c' && input != 'P' && input !='p' && input !='Q' && input != 'q') 
                 {
                         cout<<"Character entered does not match a menu option. Please try again."<<endl;
@@ -127,9 +139,4 @@ int main()
 
         return 0;
 }
-
-
-
-
-
 
