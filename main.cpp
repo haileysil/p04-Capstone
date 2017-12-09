@@ -19,6 +19,7 @@ int main()
         recipes.push_back("omelet");
 
         char input;
+
         do
         {
                 cout<<"\n==RECIPE BOOK MANAGER==";
@@ -86,45 +87,44 @@ int main()
                         if (file.is_open())
                         {
                                 do
-                                   {
-                                   ingredient thing;
+                                {
+                                        ingredient thing;
 
-                                   double num;
-                                   file>>num;
-                                   thing.setAmount(num);
+                                        double num;
+                                        file>>num;
+                                        thing.setAmount(num);
 
-                                   string type;
-                                   file>>type;
-                                   thing.setMeasurement(type);
+                                        string type;
+                                        file>>type;
+                                        thing.setMeasurement(type);
 
-                                   string item;
-                                   file>>item;
-                                   thing.setName(item);
+                                        string item;
+                                        file>>item;
+                                        thing.setName(item);
 
-                                   groceryList.push_back(thing);
+                                        groceryList.push_back(thing);
 
-                                   } while (file.peek() != '#');
-                                
+                                } while (file.peek() != '#');
+
                                 file.close();
                         }
-
                         else 
                         {
                                 cout<<"unable to open file";
                         }
                 }
 
-                   else if(input=='P'||input=='p')
-                   {
-                    cout<<"Grocery List:"<<endl;
+                if (input=='p'||input=='P')
+                {
+                        cout<<"Grocery List:"<<endl;
 
-                    for (int i=0; i<groceryList.size(); i++)
-                            {
-                            cout<<groceryList[i]<<endl;
-                            }
-                   }
-                
-                if (input !='R' && input !='r' && input != 'C' && input != 'c' && input != 'P' && input !='p' && input !='Q' && input != 'q') 
+                        for (int i=0; i<groceryList.size(); i++)
+                        {
+                                cout<<groceryList[i]<<endl;
+                        }
+                }
+
+                if (input !='R' && input !='r' && input != 'C' && input != 'c' && input=='P' && input=='p' && input !='Q' && input != 'q') 
                 {
                         cout<<"Character entered does not match a menu option. Please try again."<<endl;
                 }
@@ -133,4 +133,3 @@ int main()
 
         return 0;
 }
-
