@@ -8,70 +8,110 @@ using namespace std;
 
 int main()
 {
+        vector <string> recipes;
+        
+        string cookies,muffins,meatloaf,enchiladas,omelet;
+        recipes.push_back(cookies);
+        recipes.push_back(muffins);
+        recipes.push_back(meatloaf);
+        recipes.push_back(enchiladas);
+        recipes.push_back(omelet);
+
         char input;
+        
         do
         {
                 cout<<"\n==RECIPE BOOK MANAGER==";
                 cout<<"\nEnter your choice: ";
-                cout<<"\n (P)rint Recipe";
-                cout<<"\n (C)reate Grocery List;
+                cout<<"\n (R)ead Recipe";
+                cout<<"\n (C)reate Grocery List";
+                cout<<"\n (P)rint Grocery List";
                 cout<<"\n (Q)uit";
-                cout<<"\n Your choice (P/C/Q): ";
+                cout<<"\n Your choice (R/C/P/Q): ";
                 cin>>input;
 
-                if (input=='P'||input=='p')
+                if (input=='R'||input=='r')
                 {
-                        cout<<"recipe to screen"<<endl;
+                        string line;
+                        ifstream FileToScreen;
+                        char recipe_name[255];
+                        
+                        cout<<"What recipe would you like to read? (Must end in .txt)"<<endl;
+                        cout<<"Your choices are: ";
+                        
+                        for (int i=0; i<recipes.size();i++)
+                        {
+                                cout<<recipes[i];
+                        }
+                        cin>>recipe_name;
+
+                       FileToScreen.open(recipe_name);
+
+                        if (file.is_open())
+                        {
+                                while ( getline (FileToScreen,line) )
+                                {
+                                        cout<<line<<endl;
+                                }
+                                FileToScreen.close();
+                        }
+                        else 
+                        {
+                                cout<< "Unable to open file"<<endl;
+                        } 
+
                 }
-                else if (input=='C'||input=='c')
+
+                /* else if (input=='C'||input=='c')
                 {
                         vector <ingredient> groceryList;
                         char recipe_name[255];
-                        string first;
+                        string first_word;
                         ifstream file;
 
                         cout <<"What recipe would you like to create a grocery list for? (Must end in .txt)"<<endl;
                         cin>>recipe_name;
-                        
+
                         file.open(recipe_name);
-                        
+
                         if (file.is_open())
+                        {
+                                //print out first word (Ingredients)
+                                getline(file,first_word);
+                                cout<<first_word<<endl;
+
+                                //print out each ingredient as a loop
+                                do
                                 {
-                                        do 
-                                        {
-                                        //print out first word (Ingredients)
-                                        getline(file,first);
+                                        ingredient thing;
+                                        double num;
+                                        myfile>>num;
+                                        thing.setAmount(num);
 
-                                        //print out each ingredient
-                                                ingredient thing;
-                                                double num;
-                                                myfile>>num;
-                                                thing.setAmount(num);
+                                        string type;
+                                        myfile>>type;
+                                        thing.setMeasurement(type);
 
-                                                string type;
-                                                myfile>>type;
-                                                thing.setMeasurement(type);
+                                        string item;
+                                        myfile>>item;
+                                        thing.setName(item);
 
-                                                string item;
-                                                myfile>>item;
-                                                thing.setName(item);
+                                        groceryList.push_back(thing);
 
-                                                groceryList.push_back(thing);
+                                }while (file does not read 'Directions') //will need to fix this
+                                file.close();
+                        } 
+                        else cout<<"unable to open file";
+                }*/
 
-                                        }while (file does not read 'Directions') //will need to fix this
-                                        file.close();
-                                } 
-                                else cout<<"unable to open file";
-                }
-
-                if (input !='P' && input !='p' && input != 'C' && input != 'c' && input !='Q' && input != 'q') 
+                if (input !='R' && input !='r' && input != 'C' && input != 'c' && input != 'P' && input !='p' && input !='Q' && input != 'q') 
                 {
                         cout<<"Character entered does not match a menu option. Please try again."<<endl;
                 }
 
         } while (input != 'Q' && input != 'q');
 
-                                        return 0;
+                                return 0;
 }
 
 
