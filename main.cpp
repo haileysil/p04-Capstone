@@ -90,7 +90,7 @@ int main()
                                 cout<<first_word<<endl;
 
                                 //print out each ingredient as a loop
-                                /* do
+                                do
                                    {
                                    ingredient thing;
 
@@ -108,8 +108,8 @@ int main()
 
                                    groceryList.push_back(thing);
 
-                                   } while (line != "Directions"); // similar to getline?
-                                 */
+                                   } while (line != "Directions"); //PROBLEM AREA
+                                
                                 file.close();
                         }
 
@@ -119,7 +119,6 @@ int main()
                         }
                 }
 
-                /*
                    else if(input=='P'||input=='p')
                    {
                     cout<<"Grocery List:"<<endl;
@@ -129,7 +128,7 @@ int main()
                             cout<<groceryList[i]<<endl;
                             }
                    }
-                 */
+                
                 if (input !='R' && input !='r' && input != 'C' && input != 'c' && input != 'P' && input !='p' && input !='Q' && input != 'q') 
                 {
                         cout<<"Character entered does not match a menu option. Please try again."<<endl;
